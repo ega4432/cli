@@ -1,16 +1,15 @@
 package cmd
 
-import "github.com/spf13/cobra"
-
-var (
-	RootCmd = &cobra.Command{
-		Use: "gopher",
-		Run: func(cmd *cobra.Command, args []string) {
-			cmd.Usage()
-		},
-	}
+import (
+	"fmt"
+	"github.com/spf13/cobra"
+	"time"
 )
 
-func Exe() {
-
+var RootCmd = &cobra.Command{
+	Use:   "time",
+	Short: "Go CommandLine Tools",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println(time.Now())
+	},
 }
